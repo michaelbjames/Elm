@@ -136,14 +136,14 @@ will update to `Just Football`.
 dropDown : Handle a -> [(String,a)] -> Element
 dropDown = Native.Graphics.Input.dropDown
 
-{-| Create a range slider. The following slider lets you choose a multiple
-of 0.5 between -5 and 5, with default value 1:
+{-| Create a range slider. The following slider lets you choose your height in
+meters with centimeter accuracy (0.01).
 
-      slide : Input Float
-      slide = input 1
+      height : Input Float
+      height = input 1.6
 
-      slideSlider : Signal Element
-      slideSlider = slider slide.handle id -5 5 0.5 <~ slide.signal
+      heightSlider : Element
+      heightSlider = slider height.handle id 0.5 3 0.01 1.6
 
 The first two `Float` arguments set the maximum and minimum values of the slider,
 respectively. The third `Float` argument sets the slider's step size, and the
